@@ -1,0 +1,21 @@
+.shop {
+  padding-top: 40px;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__sneakersList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:20px
+  }
+}

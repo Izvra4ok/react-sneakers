@@ -1,0 +1,18 @@
+.cartBlock {
+  position: relative;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    & div {
+      margin-left: 30px;
+      cursor: pointer;
+    }
+  }
+}
+
+.cartBlock_Icon {
+  cursor: pointer;
+  position: relative;
+}

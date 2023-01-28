@@ -1,0 +1,32 @@
+.cartMenu {
+  position: absolute;
+  top: 50px;
+  right: -5px;
+  background-color: rgba(255, 255, 255, 0.93);
+  padding: 10px 20px;
+  z-index: 2;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+
+    &_empty {
+
+    }
+  }
+
+  &__order {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 20px;
+  }
+
+  &__price {
+    margin-bottom: 20px;
+  }
+}

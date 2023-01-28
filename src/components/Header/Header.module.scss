@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 130px;
+  margin-top: 15px;
+
+  &__logoInform {
+    display: flex;
+    align-items: center;
+
+    & img {
+      margin-right: 16px;
+      width: 40px;
+      height: 40px;
+    }
+
+  }
+
+  &__logoTitle {
+    display: flex;
+    flex-direction: column;
+
+    & h3 {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+
+    & p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export const calcTotalPrice = items => items.reduce((accumulator, sneakers) => accumulator += sneakers.price, 0)

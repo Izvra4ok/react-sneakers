@@ -1,0 +1,22 @@
+.cartItem {
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  align-items: center;
+
+  &__name {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin-left: 10px;
+  }
+}
+
+.cartItem__remove {
+  cursor: grabbing;
+  margin-left: 30px;
+}

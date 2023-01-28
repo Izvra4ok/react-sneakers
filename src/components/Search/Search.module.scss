@@ -1,0 +1,17 @@
+.search {
+  display: flex;
+  border: 2px solid #F2F2F2;
+  border-radius: 8px;
+  padding: 0 15px;
+
+  &:hover {
+    box-shadow: 1px 1px 5px 1px black;
+  }
+
+  & input {
+    width: 200px;
+    border: 0;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
