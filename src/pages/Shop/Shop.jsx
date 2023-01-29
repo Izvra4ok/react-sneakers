@@ -1,8 +1,8 @@
 import React from 'react';
 import {SNEAKERS} from "../../sneakers";
-import cls from "./Shop.module.scss";
 import SneakersItem from "../../components/SneakersItem/SneakersItem";
 import Search from "../../components/Search/Search";
+import cls from "./Shop.module.scss";
 
 
 const Shop = () => {

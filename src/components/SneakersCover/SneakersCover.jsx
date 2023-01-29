@@ -2,7 +2,7 @@ import React from 'react';
 import cls from "./SneakersCover.module.scss";
 
 
-const SneakersCover = ({image,width}) => {
+const SneakersCover = ({onClick,image,width}) => {
 
     return (
         <div className={cls.sneakersCover}>

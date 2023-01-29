@@ -1,6 +1,7 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
+import QuickBar from "../QuickBar/QuickBar";
 import cls from "./Header.module.scss";
-import CartBlock from "../CartBlock/CartBlock";
 
 
 const Header = () => {
@@ -9,7 +10,9 @@ const Header = () => {
         <header className={cls.header}>
 
             <div className={cls.header__logoInform}>
-                <a href="##"><img src="/img/logo.png" alt="logo"/></a>
+                <NavLink to={"/"}>
+                    <img src="/img/logo.png" alt="logo"/>
+                </NavLink>
 
                 <div className={cls.header__logoTitle}>
                     <h3>REACT SNEAKERS</h3>
@@ -17,7 +20,7 @@ const Header = () => {
                 </div>
             </div>
 
-            <CartBlock/>
+            <QuickBar/>
 
         </header>
     );

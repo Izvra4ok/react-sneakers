@@ -1,4 +1,4 @@
-.cartBlock {
+.quickBar {
   position: relative;
 
   &__nav {
@@ -10,9 +10,9 @@
       cursor: pointer;
     }
   }
-}
 
-.cartBlock_Icon {
-  cursor: pointer;
-  position: relative;
+  &__icon {
+    cursor: pointer;
+    position: relative;
+  }
 }

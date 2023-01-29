@@ -1,16 +1,20 @@
 import React from 'react';
-import cls from "./CartMenu.module.scss";
+import {useNavigate} from "react-router-dom";
 import CartItem from "../CartItem/CartItem";
 import {calcTotalPrice} from "../../utils/utils";
 import Button from "../Button/Button";
+import cls from "./CartMenu.module.scss";
 
 
-const CartMenu = ({items}) => {
+const CartMenu = ({items, onClick}) => {
 
     const totalPrice = calcTotalPrice(items);
+    const history = useNavigate();
 
     return (
         <div className={cls.cartMenu}>
+            <h2>Корзина</h2>
+            <hr/>
             <div>
                 {items.length
                     ? <div className={cls.cartMenu__list}>
@@ -25,11 +29,23 @@ const CartMenu = ({items}) => {
                             {totalPrice > 0
                                 ? <div className={cls.cartMenu__price}>Всего: {totalPrice} руб</div>
                                 : null}
-                            <Button type='primary'>Заказать</Button>
+                            <Button onClick={()=> {history("/order/")}} type='primary' size="m">Оформить заказ</Button>
                         </div>
                     </div>
 
-                    : <div className={cls.cartMenu__list_empty}>Empty</div>
+                    : <div className={cls.cartMenu__empty}>
+                        <div>
+                            <img src="/img/empty-cart.jpg" alt="empty-cart"/>
+                        </div>
+                        <div className={cls.cartMenu__empty_text}>Корзина пустая
+                            <p>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ</p></div>
+                        <div className={cls.cartMenu__empty_btn}>
+                            <Button onClick={onClick}
+                                    type='primary'
+                                    size="m">Вернуться назад</Button>
+                        </div>
+
+                    </div>
                 }
 
             </div>

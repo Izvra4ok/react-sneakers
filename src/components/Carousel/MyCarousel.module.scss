@@ -1,0 +1,15 @@
+.carouselInner{
+
+}
+.carousel {
+  width: 100vw;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.image {
+  display: flex;
+  object-fit: cover;
+  justify-content: flex-end;
+  height: 100%;
+}

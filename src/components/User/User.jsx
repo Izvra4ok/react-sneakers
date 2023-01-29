@@ -1,5 +1,5 @@
 import React from 'react';
-import cls from "../CartBlock.module.scss";
+import cls from "../QuickBar/QuickBar.module.scss";
 
 const User = () => {
     return (
