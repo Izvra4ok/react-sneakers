@@ -23,25 +23,39 @@ const QuickBar = () => {
             <div className={cls.quickBar__nav}>
                 {items.length
                     ? <div className={cls.quickBar__icon}>
-                        <BsFillCartCheckFill onClick={() => setIsCartMenuVisible(!isCartMenuVisible)} size={45}
+                        <BsFillCartCheckFill onClick={() => {
+                            setIsCartMenuVisible(!isCartMenuVisible);
+                            setIsFavouriteMenuVisible(false)
+                        }}
+                                             size={45}
                                              className={cls.quickBar__icon}/>
                         <ItemsInQuickBar quality={items.length}/>
                     </div>
                     : <div className={cls.quickBar__icon}>
-                        <BiCart onClick={() => setIsCartMenuVisible(!isCartMenuVisible)} size={45}/>
+                        <BiCart onClick={() => {
+                            setIsCartMenuVisible(!isCartMenuVisible);
+                            setIsFavouriteMenuVisible(false)
+                        }}
+                                size={45}/>
                     </div>
                 }
 
                 {favourite.length
-                    ? <div className={cls.quickBar__icon}>
-                        <Favourites onClick={() => setIsFavouriteMenuVisible(!isFavouriteMenuVisible)}
+                    ? <div className={cls.quickBar__icon} onClick={() => setIsCartMenuVisible(!isCartMenuVisible)}>
+                        <Favourites onClick={() => {
+                            setIsFavouriteMenuVisible(!isFavouriteMenuVisible);
+                            setIsCartMenuVisible(false);
+                        }}
                                     image={"/img/liked.svg"}
                                     width={55}/>
                         <ItemsInQuickBar quality={favourite.length}/>
                     </div>
 
                     : <div className={cls.quickBar__icon}>
-                        <Favourites onClick={() => setIsFavouriteMenuVisible(!isFavouriteMenuVisible)}
+                        <Favourites onClick={() => {
+                            setIsFavouriteMenuVisible(!isFavouriteMenuVisible);
+                            setIsCartMenuVisible(false);
+                        }}
                                     image={"/img/unliked.svg"}
                                     width={55}/>
                     </div>}
@@ -49,12 +63,18 @@ const QuickBar = () => {
             </div>
 
             {isCartMenuVisible
-                ? <CartMenu items={items} onClick={() => setIsCartMenuVisible(!isCartMenuVisible)}/>
+                ? <CartMenu items={items} onClick={() => {
+                    setIsCartMenuVisible(!isCartMenuVisible);
+                    setIsFavouriteMenuVisible(false);
+                }}/>
                 : null}
 
             {isFavouriteMenuVisible
                 ? <FavouriteMenu favourite={favourite}
-                                 onClick={() => setIsFavouriteMenuVisible(!isFavouriteMenuVisible)}/>
+                                 onClick={() => {
+                                     setIsFavouriteMenuVisible(!isFavouriteMenuVisible);
+                                     setIsCartMenuVisible(false)
+                                 }}/>
                 : null}
         </div>
     );

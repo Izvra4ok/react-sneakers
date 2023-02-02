@@ -25,11 +25,14 @@ const CartMenu = ({items, onClick}) => {
                                 </div>)
                         }
 
-                        <div className={cls.cartMenu__order}>
+                        <div onClick={onClick}
+                             className={cls.cartMenu__order}>
                             {totalPrice > 0
                                 ? <div className={cls.cartMenu__price}>Всего: {totalPrice} руб</div>
                                 : null}
-                            <Button onClick={()=> {history("/order/")}} type='primary' size="m">Оформить заказ</Button>
+                            <Button onClick={() => {
+                                history("/order/")
+                            }} type='primary' size="m">Оформить заказ</Button>
                         </div>
                     </div>
 
@@ -38,7 +41,8 @@ const CartMenu = ({items, onClick}) => {
                             <img src="/img/empty-cart.jpg" alt="empty-cart"/>
                         </div>
                         <div className={cls.cartMenu__empty_text}>Корзина пустая
-                            <p>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ</p></div>
+                            <p>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ</p>
+                        </div>
                         <div className={cls.cartMenu__empty_btn}>
                             <Button onClick={onClick}
                                     type='primary'

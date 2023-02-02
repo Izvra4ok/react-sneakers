@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 import SneakersCover from "../SneakersCover/SneakersCover";
-import {deleteFavourite} from "../../REDUX/FavouritesReducer/Favourites";
+import {deleteFavourite} from "../../REDUX/FavouritesReducer/FavouritesReducer";
 import {useNavigate} from "react-router-dom";
 import cls from "./FavouriteItem.module.scss";
 
@@ -24,12 +24,10 @@ const FavouriteItem = ({favourite}) => {
                 {favourite.name}
             </div>
             <div onClick={() => history(`/${favourite.name}`)}>
-                <SneakersCover
-                    image={favourite.image} width={200}/>
+                <SneakersCover image={favourite.image} width={200}/>
             </div>
 
             <div onClick={handleClickDeleteFavourite}>
-
                 <img className={cls.favouriteItem__remove}
                      src="/img/btn-remove.svg" alt="btn-remove"/>
             </div>

@@ -1,5 +1,7 @@
 .shop {
   padding-top: 40px;
+  min-height: 100vh;
+  height: 100%;
 
   &__title {
     font-size: 32px;
@@ -13,9 +15,11 @@
     justify-content: space-between;
   }
 
+
   &__sneakersList {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap:20px
+    grid-auto-rows: auto;
+    gap: 10px
   }
 }

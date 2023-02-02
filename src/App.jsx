@@ -1,10 +1,9 @@
 import Header from "./components/Header/Header";
 import Shop from "./pages/Shop/Shop";
 import {Route, Routes} from "react-router-dom";
-import MyCarousel from "./components/Carousel/MyCarousel";
 import Shoes from "./pages/Shoes/Shoes";
-import "./App.scss"
 import Order from "./pages/Order/Order";
+import "./App.scss"
 
 
 const App = () => {
@@ -12,10 +11,6 @@ const App = () => {
     return (
         <div className={"wrapper"}>
             <Header/>
-
-            <div className={"content"}>
-                <MyCarousel/>
-            </div>
 
             <div className={"content"}>
                 <Routes>

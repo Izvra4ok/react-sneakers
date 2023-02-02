@@ -1,7 +1,5 @@
 .sneakersItem {
   position: relative;
-  width: 210px;
-  height: 260px;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -29,6 +27,7 @@
     line-height: 17px;
     margin: 14px 0;
     color: black;
+    cursor: pointer;
   }
 
   &__price {

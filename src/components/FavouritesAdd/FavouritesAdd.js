@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import ButtonImage from "../ButtonImage/ButtonImage";
-import {deleteFavourite, setFavourite} from "../../REDUX/FavouritesReducer/Favourites";
+import {deleteFavourite, setFavourite} from "../../REDUX/FavouritesReducer/FavouritesReducer";
 
 const FavouritesAdd = ({sneakers}) => {
 
