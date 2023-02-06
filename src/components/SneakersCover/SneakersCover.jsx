@@ -8,7 +8,6 @@ const SneakersCover = ({image,width}) => {
         <div className={cls.sneakersCover}>
             <img width={width} src={`${process.env.PUBLIC_URL}${image}`} alt="image"/>
         </div>
-
     );
 
 };

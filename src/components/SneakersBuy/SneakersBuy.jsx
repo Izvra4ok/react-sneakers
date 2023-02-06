@@ -4,12 +4,10 @@ import {deleteItemFromCart, setItemInCart} from "../../REDUX/CartReducer/CartRed
 import ButtonImage from "../ButtonImage/ButtonImage";
 
 
-
 const SneakersBuy = ({sneakers}) => {
 
     const dispatch = useDispatch();
     const items = useSelector(state => state.cart.itemsInCart);
-
 
     const isItemInCart = items.some(item => item.id === sneakers.id);
 
@@ -25,9 +23,10 @@ const SneakersBuy = ({sneakers}) => {
 
     return (
         <div>
-            {isItemInCart
-                ? <ButtonImage onClick={handleClickDeleteItem} image={"/img/btn-checked.svg"}/>
-                : <ButtonImage onClick={handleAddItemInCart} image={"/img/btn-plus.svg"}/>
+            {
+                isItemInCart
+                    ? <ButtonImage onClick={handleClickDeleteItem} image={"/img/btn-checked.svg"}/>
+                    : <ButtonImage onClick={handleAddItemInCart} image={"/img/btn-plus.svg"}/>
             }
         </div>
     );

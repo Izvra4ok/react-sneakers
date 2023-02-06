@@ -1,18 +1,17 @@
 import React from 'react';
 import Button from "../Button/Button";
 import FavouriteItem from "../FavouriteItem/FavouriteItem";
-import {useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import cls from "./FavouriteMenu.module.scss";
 
 
 const FavouriteMenu = ({favourite, onClick}) => {
 
-    const history = useNavigate()
-
     return (
         <div className={cls.favouriteMenu}>
             <h2>Избранное</h2>
             <hr/>
+
             <div>
                 {
                     favourite.length
@@ -30,14 +29,12 @@ const FavouriteMenu = ({favourite, onClick}) => {
                                         ? <div className={cls.favouriteMenu__price}>В закладках: {favourite.length}</div>
                                         : null}
 
-                                <div onClick={() => {
-                                    history("/")
-                                }}>
+                                <NavLink to={"/"}>
                                     <Button onClick={onClick}
                                             type='primary'
                                             size="m">Вернуться назад
                                     </Button>
-                                </div>
+                                </NavLink>
 
                             </div>
                         </div>

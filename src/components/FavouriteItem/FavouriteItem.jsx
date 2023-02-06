@@ -1,31 +1,34 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {useDispatch} from "react-redux";
 import SneakersCover from "../SneakersCover/SneakersCover";
 import {deleteFavourite} from "../../REDUX/FavouritesReducer/FavouritesReducer";
-import {useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import cls from "./FavouriteItem.module.scss";
 
 
 const FavouriteItem = ({favourite}) => {
 
     const dispatch = useDispatch();
-    const history = useNavigate()
 
-    const handleClickDeleteFavourite = (e) => {
+    const handleClickDeleteFavourite = useCallback((e) => {
         e.stopPropagation();
         dispatch(deleteFavourite(favourite.id))
-    };
+    },[]);
 
     return (
         <div className={cls.favouriteItem}>
 
-            <div className={cls.favouriteItem__name}
-                 onClick={() => history(`/${favourite.name}`)}>
-                {favourite.name}
-            </div>
-            <div onClick={() => history(`/${favourite.name}`)}>
-                <SneakersCover image={favourite.image} width={200}/>
-            </div>
+            <NavLink to={`/shoes/${favourite.name}`}>
+                <div className={cls.favouriteItem__name}>
+                    {favourite.name}
+                </div>
+            </NavLink>
+
+            <NavLink to={`/shoes/${favourite.name}`}>
+                <div>
+                    <SneakersCover image={favourite.image} width={200}/>
+                </div>
+            </NavLink>
 
             <div onClick={handleClickDeleteFavourite}>
                 <img className={cls.favouriteItem__remove}

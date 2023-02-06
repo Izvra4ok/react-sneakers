@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {SNEAKERS} from "../../sneakers";
 import SneakersItem from "../../components/SneakersItem/SneakersItem";
 import Search from "../../components/Search/Search";
-import cls from "./Shop.module.scss";
 import MyCarousel from "../../components/Carousel/MyCarousel";
+import cls from "./Shop.module.scss";
 
 
 const Shop = () => {
@@ -12,14 +12,14 @@ const Shop = () => {
     const [isOpenSearch, setIsOpenSearch] = useState(true);
 
     const handleChange = (event) => {
-        setSearchValue(event.target.value)
+        setSearchValue(event.target.value);
     };
 
     const filterSneakers = SNEAKERS.filter(sneakers => {
         return sneakers.name.toLowerCase().includes(searchValue.toLowerCase())
     });
 
-    const handlerItemClickSearch = (e) => {
+    const handlerItemClickSearched = (e) => {
         setSearchValue(e.target.textContent);
         setIsOpenSearch(false)
     };
@@ -28,9 +28,12 @@ const Shop = () => {
         setIsOpenSearch(true);
     };
 
+
     return (
-        <div className={cls.grid}>
+        <div className={cls.shopContainer}>
+
             <MyCarousel/>
+
             <div className={cls.shop}>
                 <div className={cls.shop__nav}>
                     <h1 className={cls.shop__title}>Все кроссовки</h1>
@@ -40,7 +43,7 @@ const Shop = () => {
                             setSearchValue={setSearchValue}
                             handleChange={handleChange}
                             handlerInputClick={handlerInputClick}
-                            handlerItemClickSearch={handlerItemClickSearch}
+                            handlerItemClickSearched={handlerItemClickSearched}
                             isOpenSearch={isOpenSearch}
                             setIsOpenSearch={setIsOpenSearch}/>
                 </div>
@@ -50,8 +53,8 @@ const Shop = () => {
                         filterSneakers.map(sneakers =>
                             <div key={Math.random()}>
                                 <SneakersItem sneakers={sneakers}/>
-                            </div>
-                        )}
+                            </div>)
+                    }
                 </div>
             </div>
         </div>

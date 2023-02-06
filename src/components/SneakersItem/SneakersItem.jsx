@@ -41,7 +41,6 @@ const SneakersItem = ({sneakers}) => {
                     <SneakersBuy sneakers={sneakers}/>
                 </div>
             </div>
-
         </div>
     );
 };

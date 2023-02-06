@@ -1,31 +1,32 @@
-import React, {useEffect} from 'react';
-import cls from "./Shoes.module.scss";
-import {useSelector} from "react-redux";
+import React, {useCallback} from 'react';
+import {useDispatch, useSelector} from "react-redux";
 import Button from "../../components/Button/Button";
-import {useNavigate} from "react-router-dom";
-import SneakersBuy from "../../components/SneakersBuy/SneakersBuy";
-import {calcTotalPrice} from "../../utils/utils";
+import {NavLink} from "react-router-dom";
+import {setItemInCart} from "../../REDUX/CartReducer/CartReducer";
+import cls from "./Shoes.module.scss";
 
 
 const Shoes = () => {
 
-    const history = useNavigate();
+    const dispatch = useDispatch();
     const currentSneakers = useSelector(state => state.currentSneakers.currentShoes);
     const items = useSelector(state => state.cart.itemsInCart);
     const isItemInCart = items.some(item => item.id === currentSneakers.id);
-    const totalPrice = calcTotalPrice(items);
 
+    const handleAddItemInCart = useCallback((e) => {
+        e.stopPropagation();
+        dispatch(setItemInCart(currentSneakers))
+    }, [currentSneakers,dispatch]);
 
-    useEffect(() => {
-    }, [currentSneakers.name, currentSneakers.image])
-
-    if (!currentSneakers.video && !currentSneakers.image) {
-        return <h2>Loading...</h2>
-    }
-    if (!currentSneakers.name) return <h2>...Loading</h2>
+    if (!currentSneakers.name && !currentSneakers.image) return <h2>Loading...</h2>
 
     return (
         <div>
+
+            <NavLink to={"/"}>
+                <Button type="primary" size="s">Вернуться назад</Button>
+            </NavLink>
+
             <div className={cls.current}>
                 <h2 className={cls.current__title}>{currentSneakers.name}</h2>
 
@@ -36,27 +37,21 @@ const Shoes = () => {
                     <div className={cls.current__text}>
                         {currentSneakers.description}
                     </div>
-                    <div>
-                        <SneakersBuy sneakers={currentSneakers}/>
-                    </div>
+
                 </div>
 
-                    {isItemInCart
-                        ? <div className={cls.current__order}>Стоимость: {currentSneakers.price}
-                            <Button onClick={() => {
-                                history("/order/")
-                            }} type='primary' size="m">Оформить заказ
-                            </Button>
+                {
+                    isItemInCart
+                        ? <div className={cls.current__order}>
+                            <span>Стоимость: {currentSneakers.price} руб</span>
+                            <NavLink to={"/order/"}>
+                                <Button type="primary" size="m">Оформить заказ</Button>
+                            </NavLink>
                         </div>
                         : <div className={cls.current__order}>
-                            <Button onClick={() => {
-                            history("/")
-                        }}
-                                     type='primary'
-                                     size="m">Вернуться назад</Button></div>
-                    }
-
-
+                            <Button onClick={handleAddItemInCart} type="primary" size="s">Добавить в корзину</Button>
+                        </div>
+                }
             </div>
         </div>
     );

@@ -9,12 +9,14 @@ const currentSlice = createSlice({
     reducers: {
         setCurrentSneakers: (state, action) => {
             state.currentShoes = action.payload;
-            let response = JSON.stringify(state.currentShoes)
-            if (response) {
-                localStorage.setItem("shoes", response)
+
+            try {
+                let storage = JSON.stringify(state.currentShoes);
+                localStorage.setItem('current', storage);
+            } catch (error) {
+                console.log(error.message, "error");
             }
         },
-
     }
 })
 

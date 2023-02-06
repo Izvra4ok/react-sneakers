@@ -1,12 +1,15 @@
 import React from 'react';
 import cls from "./Search.module.scss";
 
-const Search = ({handleChange, searchValue,setSearchValue, handlerInputClick, handlerItemClickSearch, filterSneakers, isOpenSearch,setIsOpenSearch}) => {
+const Search = ({
+                    handleChange, searchValue, setSearchValue, handlerInputClick,
+                    handlerItemClickSearched, filterSneakers, isOpenSearch, setIsOpenSearch
+                }) => {
 
     const clearInputSearch = () => {
         setSearchValue("");
         setIsOpenSearch(false);
-    }
+    };
 
     return (
         <div className={cls.search}>
@@ -22,15 +25,15 @@ const Search = ({handleChange, searchValue,setSearchValue, handlerInputClick, ha
             </div>
 
             <ul className={cls.search__autoComplete}>
-                {searchValue && isOpenSearch
-                    ? filterSneakers.map(sneakers =>
-                        <div key={Math.random()}>
-                            <li onClick={handlerItemClickSearch}
-                                className={cls.search__autoComplete_item}>{sneakers.name}</li>
-                        </div>
-                    )
-                    : null}
-
+                {
+                    searchValue && isOpenSearch
+                        ? filterSneakers.map(sneakers =>
+                            <div key={Math.random()}>
+                                <li onClick={handlerItemClickSearched}
+                                    className={cls.search__autoComplete_item}>{sneakers.name}</li>
+                            </div>)
+                        : null
+                }
             </ul>
         </div>
     );

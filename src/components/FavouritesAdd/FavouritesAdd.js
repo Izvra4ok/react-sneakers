@@ -22,9 +22,10 @@ const FavouritesAdd = ({sneakers}) => {
 
     return (
         <div>
-            {isFavourite
-                ? <ButtonImage onClick={handleClickDeleteFavourite} width={60} image={"/img/liked.svg"}/>
-                : <ButtonImage onClick={handleAddFavourite} width={60} image={"/img/unliked.svg"}/>
+            {
+                isFavourite
+                    ? <ButtonImage onClick={handleClickDeleteFavourite} width={60} image={"/img/liked.svg"}/>
+                    : <ButtonImage onClick={handleAddFavourite} width={60} image={"/img/unliked.svg"}/>
             }
         </div>
     );
