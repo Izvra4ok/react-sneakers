@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import cls from "./MyCarousel.module.scss";
 
 
- const MyCarousel = () => {
+const MyCarousel = () => {
 
     const SampleNextArrow = (props) => {
 
@@ -58,28 +58,34 @@ import cls from "./MyCarousel.module.scss";
         <div className={cls.carouselInner}>
             <Slider {...settings}>
                 <div>
-                    <h3 className={cls.carousel}><img className={cls.image} src="img/carousel/puma2.webp"
-                                                      alt="puma"/></h3>
+                    <h3 className={cls.carousel}>
+                        <img className={cls.image} src="img/carousel/pumaWhite.jpg" alt="puma2"/>
+                    </h3>
                 </div>
                 <div>
-                    <h3 className={cls.carousel}><img className={cls.image} src="img/carousel/adidas1.jpg"
-                                                      alt="adidas"/></h3>
+                    <h3 className={cls.carousel}>
+                        <img className={cls.image} src="img/carousel/adidas1.jpg" alt="adidas"/>
+                    </h3>
                 </div>
                 <div>
-                    <h3 className={cls.carousel}><img className={cls.image} src="img/carousel/puma.webp"
-                                                      alt="puma"/></h3>
+                    <h3 className={cls.carousel}>
+                        <img className={cls.image} src="img/carousel/pumaNew.jpeg" alt="puma"/>
+                    </h3>
                 </div>
                 <div>
-                    <h3 className={cls.carousel}><img className={cls.image} src="img/carousel/shoes.jpg"
-                                                      alt="shoes"/></h3>
+                    <h3 className={cls.carousel}>
+                        <img className={cls.image} src="img/carousel/shoes.jpg" alt="shoes"/>
+                    </h3>
                 </div>
+
                 <div>
-                    <h3 className={cls.carousel}><img className={cls.image} src="img/carousel/adidas.jpg"
-                                                      alt="adidas"/></h3>
+                    <h3 className={cls.carousel}>
+                        <img className={cls.image} src="img/carousel/adidas.jpg" alt="adidas"/>
+                    </h3>
                 </div>
             </Slider>
         </div>
     );
 }
 
-export  default MyCarousel;
+export default MyCarousel;

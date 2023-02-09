@@ -25,8 +25,8 @@ const SneakersItem = ({sneakers}) => {
                 <FavouritesAdd sneakers={sneakers}/>
             </div>
 
-            <div onClick={handleOpenCurrentShoes}>
-                <SneakersCover image={sneakers.image} width={133}/>
+            <div className={cls.sneakersItem__cover} onClick={handleOpenCurrentShoes}>
+                <SneakersCover image={sneakers.image}/>
 
                 <div className={cls.sneakersItem__title}>{sneakers.name}</div>
             </div>

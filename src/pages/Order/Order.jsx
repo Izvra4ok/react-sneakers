@@ -21,7 +21,9 @@ const Order = () => {
                 items.length < 1
                     ? <h2 className={cls.orderPage__title}>Cart is empty</h2>
                     : <div>
+                        <h2 className={cls.orderPage__title}>Order Page</h2>
                         <div className={cls.orderPage__left}>
+
                             {items.map(sneakers => <OrderItem key={Math.random()} items={sneakers}/>)}
                         </div>
 

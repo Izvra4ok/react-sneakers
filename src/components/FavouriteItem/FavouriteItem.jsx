@@ -26,7 +26,7 @@ const FavouriteItem = ({favourite}) => {
 
             <NavLink to={`/shoes/${favourite.name}`}>
                 <div>
-                    <SneakersCover image={favourite.image} width={200}/>
+                    <SneakersCover image={favourite.image}/>
                 </div>
             </NavLink>
 

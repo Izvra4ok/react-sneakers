@@ -1,5 +1,6 @@
 .current {
   display: flex;
+  padding: 10px;
   flex-direction: column;
 
   &__title {
@@ -18,14 +19,10 @@
   }
 
   &__description {
-    margin-top: 10px;
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 40% 60%;
     gap: 20px;
     align-items: center;
-    //display: flex;
-    //align-items: center;
-    //justify-content: center;
   }
 
   &__text {
@@ -34,6 +31,7 @@
 
   &__order {
     display: flex;
+    font-weight: 700;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
@@ -43,3 +41,22 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .current {
+    margin-top: 10px;
+
+    &__description {
+      grid-template-columns:1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      & img {
+        display: flex;
+        width: 60%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+

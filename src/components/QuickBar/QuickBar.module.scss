@@ -16,3 +16,9 @@
     position: relative;
   }
 }
+
+@media (max-width: 480px) {
+ .quickBar{
+   margin-top:20px;
+ }
+}

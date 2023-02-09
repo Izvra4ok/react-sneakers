@@ -12,7 +12,7 @@ const OrderItem = ({items}) => {
     const handleClick = useCallback((e) => {
         e.stopPropagation();
         dispatch(deleteItemFromCart(items.id))
-    },[]);
+    }, []);
 
     return (
         <div className={cls.orderItem}>

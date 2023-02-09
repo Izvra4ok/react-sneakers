@@ -16,13 +16,13 @@ const CartItem = ({item}) => {
 
     return (
         <div className={cls.cartItem}>
-
+            <hr/>
             <NavLink to={`/shoes/${item.name}`}>
                 <div className={cls.cartItem__name}>{item.name}</div>
             </NavLink>
 
             <NavLink to={`/shoes/${item.name}`}>
-                <SneakersCover image={item.image} width={100}/>
+                <SneakersCover image={item.image}/>
             </NavLink>
             <div className={cls.cartItem__price}>{item.price} руб
 

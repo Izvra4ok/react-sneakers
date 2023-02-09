@@ -1,6 +1,4 @@
-.carouselInner{
 
-}
 .carousel {
   width: 100vw;
   height: 400px;
@@ -8,8 +6,33 @@
 }
 
 .image {
-  display: flex;
   object-fit: cover;
-  justify-content: flex-end;
   height: 100%;
+}
+
+
+@media (max-width: 992px) {
+  .carousel {
+    height: 300px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 200px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .carousel {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 100px;
+  }
 }
